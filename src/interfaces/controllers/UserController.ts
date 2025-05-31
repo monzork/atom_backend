@@ -11,7 +11,7 @@ const findOrCreateUser = new FindOrCreateUser(userRepo);
 
 export class UserController {
 	static async find(req: Request, res: Response) {
-		const { email } = req.params;
+		const { email } = req.body;
 		if (!email) res.status(400).json({ message: 'Email is required' });
 
 		try {

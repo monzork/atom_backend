@@ -19,6 +19,7 @@ export class TaskController {
 
 		if (!title || !description) {
 			res.status(400).json({ message: 'Title and description are required' });
+			return;
 		}
 
 		try {
@@ -45,7 +46,10 @@ export class TaskController {
 
 		try {
 			const updated = await updateTask.execute({ id, title, description, completed });
-			if (!updated) res.status(404).json({ message: 'Task not found' });
+			if (!updated) {
+				res.status(404).json({ message: 'Task not found' });
+				return;
+			}
 
 			res.json(updated);
 		} catch (error) {
@@ -58,7 +62,10 @@ export class TaskController {
 
 		try {
 			const deleted = await deleteTask.execute(id);
-			if (!deleted) res.status(404).json({ message: 'Task not found' });
+			if (!deleted) {
+				res.status(404).json({ message: 'Task not found' })
+				return;
+			};
 
 			res.status(204).send();
 		} catch (error) {
