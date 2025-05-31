@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"main": "lib/index.js",
 	"scripts": {
-		"build": "tsc",
+		"build": "tsc && tsc-alias",
 		"start": "node dist/index.js",
 		"dev": "nodemon --watch src --exec ts-node src/index.ts",
 		"dev:debug": "node --inspect=9229 -r tsconfig-paths/register -r ts-node/register src/index.ts",
@@ -48,6 +48,7 @@
 		"nodemon": "^3.1.10",
 		"prettier": "^3.5.3",
 		"ts-jest": "^29.3.4",
+		"tsc-alias": "^1.8.16",
 		"ts-node": "^10.9.2",
 		"tsconfig-paths": "^4.2.0",
 		"typescript": "^5.8.3",
