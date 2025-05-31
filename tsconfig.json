@@ -13,7 +13,6 @@
 		"outDir": "lib",
 		"rootDir": "src",
 		"types": ["node", "jest"],
-		"sourceMap": true,
 		"baseUrl": "./",
 		"paths": {
 			"@/*": ["src/*"]

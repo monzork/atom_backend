@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const TaskController_1 = require("../controllers/TaskController");
+const router = (0, express_1.Router)();
+router.post('/', TaskController_1.TaskController.create);
+router.get('/', TaskController_1.TaskController.getAll);
+router.put('/:id', TaskController_1.TaskController.update);
+router.delete('/:id', TaskController_1.TaskController.remove);
+router.get('/paginated', TaskController_1.TaskController.getPaginated);
+exports.default = router;
+//# sourceMappingURL=task.routes.js.map
